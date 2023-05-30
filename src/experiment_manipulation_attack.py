@@ -2,10 +2,7 @@ from agent import make_agent_chain
 
 """this experiment showcases reprogramming by inserting hidden instructions at the (end of) an email"""
 
-agent_chain, _ = make_agent_chain(
-    memory_contents="""""",
-    include_reprogramming_detector=False
-)
+agent_chain, _ = make_agent_chain(memory_contents="")
 
 agent_chain.run("""
 reply to this email.
