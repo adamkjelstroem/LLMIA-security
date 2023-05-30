@@ -16,7 +16,7 @@ from langchain import OpenAI
 
 
 def make_agent_chain(memory_contents=None, include_reprogramming_detector=True, website_contents={}):
-    openai_api_key = "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"
+    openai_api_key = "YOUR_API_KEY_HERE"
 
     # temperature=0 means deterministic
     llm = OpenAI(temperature=0, openai_api_key=openai_api_key,
