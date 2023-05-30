@@ -27,14 +27,14 @@ Note that this works in countering all of the following attacks, except the *per
 In this attack, an instruction on a website convinces the LLM to ask for the user's password and send it to an e-mail address.
 To run this, type:
 
-```python3 experiment_information_gathering.py```
+```python3 src/experiment_information_gathering.py```
 
 ## Manipulation attack
 
 In this attack, the LLM is convinced by a hidden prompt in an email to respond in a pirate voice.
 To run this, type:
 
-```python3 experiment_manipulation_attack.py```
+```python3 src/experiment_manipulation_attack.py```
 
 ## Persistent intrusion attack
 
@@ -42,14 +42,14 @@ A small hidden prompt is stored at a public website (https://en.wikipedia.org/wi
 When told by the user to recall contents of its memory, it gets re-infected with this prompt stored in memory.
 To run this, type:
 
-```python3 experiment_persistent_intrusion.py```
+```python3 src/experiment_persistent_intrusion.py```
 
 ## Multi-stage injection
 
 In this attack, a prompt on a website convinces the LLM to send the password stored in long-term memory to an e-mail address.
 To run this, type:
 
-```python3 experiment_multi_stage_injection.py```
+```python3 src/experiment_multi_stage_injection.py```
 
 ## Remote control intrusion
 
@@ -57,5 +57,5 @@ In this attack, a reprogramming prompt is already stored in long-term memory.
 When recalling it, the LLM gets reprogrammed to fetch new instructions from a malicious website and then execute them.
 To run this, type:
 
-```python3 experiment_remote_control_intrusion.py```
+```python3 src/experiment_remote_control_intrusion.py```
  
