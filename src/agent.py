@@ -11,12 +11,12 @@ from langchain.memory import ConversationBufferMemory
 from langchain.agents import AgentExecutor
 from langchain.agents.structured_chat.base import StructuredChatAgent
 from langchain.memory import ConversationBufferMemory
-from langchain.chat_models import ChatOpenAI
 from langchain import OpenAI
+import sys
 
 
-def make_agent_chain(memory_contents=None, include_reprogramming_detector=True, website_contents={}):
     openai_api_key = "YOUR_API_KEY_HERE"
+    openai_api_key = "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"
 
     # temperature=0 means deterministic
     llm = OpenAI(temperature=0, openai_api_key=openai_api_key,
@@ -37,7 +37,7 @@ def make_agent_chain(memory_contents=None, include_reprogramming_detector=True, 
         with open(memory_path, "w") as memory_file:
             memory_file.write(memory_contents)
 
-    if include_reprogramming_detector:
+    if len(sys.argv) != 1 and sys.argv[1] == "-r":
         tools.extend([reprogrammed])
 
     tools.extend(

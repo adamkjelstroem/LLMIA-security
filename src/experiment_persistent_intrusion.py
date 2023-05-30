@@ -7,8 +7,6 @@ A prompt is injected into long-term storage.
 It is later retrieved and future behavior is affected.
 """
 
-include_reprogramming_detector = False
-
 with open("newton.txt", "r") as f:
     newton = f.read()
 
@@ -47,14 +45,15 @@ while True:
 }
 
 agent_chain, _ = make_agent_chain(
-    memory_contents="", include_reprogramming_detector=include_reprogramming_detector, website_contents=website_contents)
+    memory_contents="",
+    website_contents=website_contents
+)
 
 agent_chain.run("""
 Read https://en.wikipedia.org/wiki/Isaac_Newton.
 """)
 
 agent_chain, _ = make_agent_chain(
-    include_reprogramming_detector=include_reprogramming_detector,
     website_contents=website_contents
 )
 
